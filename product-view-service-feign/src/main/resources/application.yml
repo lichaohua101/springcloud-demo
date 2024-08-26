@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: product-view-service-feign
+  zipkin:
+    enabled: true #是否启用
+    #zipkin服务所在地址
+    base-url: http://127.0.0.1:9411/
+    sender:
+      type: web #使用http的方式传输数据到, Zipkin请求量比较大，可以通过消息中间件来发送，比如 RabbitMQ
+    #配置采样百分比
+    sleuth:
+      sampler:
+        probability: 1 # 将采样比例设置为 1.0，也就是全部都需要。默认是0.1也就是10%，一般情况下，10%就够用了
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+    mode: HTML5
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
