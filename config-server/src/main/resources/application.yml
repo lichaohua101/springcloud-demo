@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+#          uri: https://github.com/how2j/springcloudConfig/
+          uri: https://github.com/lichaohua101/springcloud-demo
+          searchPaths: respo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
