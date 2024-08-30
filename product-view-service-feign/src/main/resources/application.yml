@@ -26,6 +26,9 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
+#开启断路器
+feign.hystrix.enabled: true
+
 #允许来自任何源的跨域请求和所有HTTP方法。
 management:
   endpoints:
